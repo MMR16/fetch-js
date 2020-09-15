@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const URL = 'https://jsonplaceholder.typicode.com/posts/1/comments'
+
+        fetch(URL).then(X => X.json()).then(Z => {
+            // for (const iterator of Z) {
+            //     const lbl = document.createElement('div')
+            //     const bdy = document.querySelector('body');
+            //     bdy.append(lbl)
+            //     lbl.innerText = iterator.email
+            // }
+
+            for (let index = 0; index < Z.length; index++) {
+                const lbl = document.createElement('div')
+                const bdy = document.querySelector('body');
+                bdy.append(lbl)
+                lbl.innerText = Z[index].email
+            }
+
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
